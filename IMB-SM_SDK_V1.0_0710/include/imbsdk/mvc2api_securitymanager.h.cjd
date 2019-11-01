@@ -1,0 +1,184 @@
+#ifndef _MVC2API_SECURITYMANAGER_H_
+#define _MVC2API_SECURITYMANAGER_H_
+
+#include "mvc2api_device.h"
+
+namespace mvc2
+{
+	class SecurityManagerPrivate;
+	//class MvcDecoder;
+
+	class MVC2_API UuidValue
+	{
+	public:
+		enum
+		{
+			UUID_KEY_LEN			= 16,
+			//
+			UUID_DASH_POSITION_1	= 3,
+			UUID_DASH_POSITION_2	= 5,
+			UUID_DASH_POSITION_3	= 7,
+			UUID_DASH_POSITION_4	= 9
+		};
+
+		UuidValue(const uint8_t *key);
+		UuidValue(uint8_t fill = 0);
+		UuidValue(const UuidValue &inkey);
+		UuidValue(uint8_t k0,uint8_t k1,uint8_t k2,uint8_t k3,
+			uint8_t k4,uint8_t k5,uint8_t k6,uint8_t k7,
+			uint8_t k8,uint8_t k9,uint8_t k10,uint8_t k11,
+			uint8_t k12,uint8_t k13,uint8_t k14,uint8_t k15);
+		UuidValue(const char *str);
+
+		bool operator ==(const UuidValue &inkey) const;
+		bool operator !=(const UuidValue &inkey) const;
+		UuidValue &operator =(const UuidValue &inkey);
+
+		uint8_t operator[](uint8_t index) const
+		{
+			return(m_key[index]);
+		}
+
+		uint8_t &operator[](uint8_t index)
+		{
+			return(m_key[index]);
+		}
+
+		operator bool() const;
+
+		char *toString(char *stringBuffer) const;
+
+		void toArray(uint8_t *array) const;
+
+	protected:
+		uint8_t m_key[UUID_KEY_LEN];
+	};
+
+	class MVC2_API SecurityManager
+	{
+	public:
+		typedef struct
+		{
+			uint8_t b3;
+			uint8_t b2;
+			uint8_t b1;
+			uint8_t b0;  /* as in b0.b1.b2.b3 */
+		} SpbIpAddress;
+
+		enum CPL_ASSET_EXCEPTION
+		{
+			CplException_None				= 0,
+			CplException_Hash				= 1,
+			CplException_Missing			= 2
+		};
+		
+		enum SM_OPERATION
+		{
+			Operation_Unknown						= 0,
+			Operation_NotPlaying					= 1,		// idle
+			Operation_Playing						= 2
+		};
+
+		enum SUITE_STATUS
+		{
+			Suite_Started		= 1,
+			Suite_Stopped		= 2,
+			Suite_Progress		= 3,
+			Suite_Restarted		= 4,
+			Suite_Lost			= 5,
+			Suite_Error			= 6
+		};
+
+		static const uint32_t c_ProjectorCertificate = 10000;
+
+		typedef struct 
+		{
+			UuidValue key_id;
+			UuidValue kdm_id;
+			uint16_t key_index;
+			uint8_t key_type;
+		} KeyMap;
+
+		typedef struct 
+		{
+			UuidValue key_id;
+			uint8_t aes_key[16];
+		} AesKeyMap;
+
+	public:
+		virtual ~SecurityManager();
+
+		SecurityManager();
+		SecurityManager(TMmRc * resultPointer, const MvcDevice &mvcDevice);
+		SecurityManager(TMmRc * resultPointer, const MvcDevice &mvcDevice, int32_t timeZoneOffsetMins);
+
+		SecurityManager(const SecurityManager& other);
+		SecurityManager& operator=(const SecurityManager& other);
+
+		////////////////////////////////////////////////////////////
+		TMmRc connect();
+
+		TMmRc startSuite(SpbIpAddress *spbList, uint32_t spbCount);
+
+		TMmRc startSuite(const char *spbList = 0);
+
+		TMmRc stopSuite();
+
+		TMmRc uploadCplFile(const char *cplPath, CPL_ASSET_EXCEPTION assetExc = CplException_None);
+
+		TMmRc uploadCplBuffer(const uint8_t *cplBuffer, uint32_t bufferSize, \
+									CPL_ASSET_EXCEPTION assetExc = CplException_None);
+
+		TMmRc uploadKdmFile(const char *kdmPath, AesKeyMap *subKeyArray = 0, uint32_t *numberOfEntries = 0);
+
+		TMmRc uploadKdmBuffer(const uint8_t *kdmBuffer, uint32_t bufferSize, \
+									AesKeyMap *subKeyArray = 0, uint32_t *numberOfEntries = 0);
+
+		TMmRc purgeCpl(const UuidValue &cplUuid);
+
+		TMmRc getCplList(UuidValue *cplUuidArray, uint32_t *arrayLen);
+
+		TMmRc getKdmList(const UuidValue &cplUuid, UuidValue *kdmUuidArray, uint32_t *arrayLen);
+
+		TMmRc playShow(const char *authId, const UuidValue *cplUuidArray, uint32_t arrayLen, uint64_t *keyExpTime = 0);
+
+		TMmRc stopShow(const char *authId);
+
+		TMmRc checkShow(const UuidValue *cplUuidArray, uint32_t arrayLen, uint64_t checkTime, uint64_t *keyExpTime = 0);
+
+		TMmRc adjustTime(const char *authId, int32_t diff);
+
+		TMmRc getCertificate(uint32_t which, uint8_t *buffer, uint32_t *buffersize);
+
+		TMmRc queryStatus(SM_OPERATION *smOp, SUITE_STATUS *suiteStat, uint64_t *secureTime, int32_t *time_adjust);
+
+		TMmRc getLogReport(uint8_t *buffer, uint32_t *buffersize, uint64_t startTime, \
+														uint64_t endTime, uint64_t *lastLogTime);
+
+		TMmRc initiateMarriage(const char *authId);
+
+		TMmRc serviceDoorTamperTermination(const char *authId);
+
+		TMmRc getKeyMap(KeyMap *keymapArray, uint32_t *numberOfEntries);
+
+		TMmRc addCertificate(void *cert);
+		
+		TMmRc usePrivateKey(void *pkey);
+
+		TMmRc loadCertificateChainFile(const char *filename);
+		TMmRc loadPrivateKeyFile(const char *filename);
+
+		TMmRc zeroize(const char *authId);
+
+
+		operator bool() const;
+
+	private:
+		SecurityManagerPrivate *getPrivate() const;
+		SecurityManagerPrivate *m_SMPrivate;
+
+		//friend class MvcDecoder;
+	};
+}
+
+#endif

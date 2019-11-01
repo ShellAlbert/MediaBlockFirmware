@@ -1,0 +1,16 @@
+/FieldActivator.hpp////
+/FieldValueMap.hpp////
+/IC_Field.hpp////
+/IC_Key.hpp////
+/IC_KeyRef.hpp////
+/IC_Selector.hpp////
+/IC_Unique.hpp////
+/IdentityConstraint.hpp////
+/IdentityConstraintHandler.hpp////
+/ValueStore.hpp////
+/ValueStoreCache.hpp////
+/XPathException.hpp////
+/XPathMatcher.hpp////
+/XPathMatcherStack.hpp////
+/XPathSymbols.hpp////
+/XercesXPath.hpp////

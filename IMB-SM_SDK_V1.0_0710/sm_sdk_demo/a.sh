@@ -1,0 +1,3 @@
+#!/bin/bash
+export LD_LIBRARY_PATH=:/home/shell.albert/oristartech/x86/IMB-SM_SDK_V1.0_0710/libs_x86/
+./sdk_demo 192.168.1.53 6002

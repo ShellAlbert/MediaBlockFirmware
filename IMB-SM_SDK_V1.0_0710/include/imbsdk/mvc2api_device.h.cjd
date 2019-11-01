@@ -1,0 +1,52 @@
+#ifndef _MVC2API_DEVICE_H_
+#define _MVC2API_DEVICE_H_
+
+#include "mvc2api_types.h"
+#include <new>
+// for time_t
+#include <ctime>
+
+namespace mvc2
+{
+
+	class MVC2_API MvcDeviceBase 
+	{
+	protected:
+		uint32_t m_Index;
+		int m_DevType;
+	public:
+		virtual ~MvcDeviceBase() {}; 
+		MvcDeviceBase() :  m_Index(0), m_DevType(0) { }; 
+		MvcDeviceBase(int nIdx, int nDevType = 0) : m_Index(nIdx), m_DevType(nDevType) { }; 
+
+		bool operator==(const MvcDeviceBase* other) const;
+
+		uint32_t getDeviceIndex() const { return m_Index; };
+		void setDeviceIndex(uint32_t nDevIndex);
+		int getDeviceType() const { return m_DevType; };
+		void setDeviceType(int nDevType) { m_DevType = nDevType; };
+
+	};
+
+	class MVC2_API MvcDevice : public MvcDeviceBase
+	{
+	public:
+		virtual ~MvcDevice() { if (m_DevicePriv) delete m_DevicePriv; }; 
+		MvcDevice() : MvcDeviceBase(), m_DevicePriv(NULL) { }; 
+		MvcDevice(int nIdx, int nDevType = 0) 
+			:  MvcDeviceBase(nIdx, nDevType), m_DevicePriv(NULL) {  m_DevicePriv = new int(10); }; 
+
+		MvcDevice& operator=(const MvcDevice& other);
+		operator bool() const;
+
+		TMmRc getDeviceState() const;
+		uint32_t getUID() const;
+
+	private:
+		//MvcDevicePrivate *m_DevicePriv;
+		int *m_DevicePriv;
+	};
+
+}
+
+#endif /* _MVC2API_DEVICE_H_ */

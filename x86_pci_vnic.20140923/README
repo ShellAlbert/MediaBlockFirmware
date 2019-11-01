@@ -1,0 +1,44 @@
+Notice here:
+	x86_pci_vnic.ko module file contains two basic device operating driver as follows:
+1.PCI 
+	communication with FPGA through PCI bus
+	execute basic read & write registers
+	execute DMA video & audio frame data fast transfer
+2.VNIC
+	simulate a virtual network interface through PCI bus	
+
+
+compile steps
+1.prepare compile environment
+	yum install gcc g++ kernel-devel;
+
+2.setup kernel source code directory
+	edit Makefile
+	change KERNEL_DIR variable to /usr/src/kernels/xxxxx
+
+3.begin compile 
+	make
+	/*
+	 *execute make command to generate module file x86_pci_vnic.ko
+ 	 */
+
+4.dynamic install module to kernel 
+	insmod x86_pci_vnic.ko
+	dmesg 
+	/*see output information*/
+
+5.create character device inode file for PCI
+	mknod /dev/mvc_card/card0 c 2014 0
+
+6.execute test program
+	./keyact_avall
+	./keyact_videoonly
+	./keyact_audioonly
+
+
+Any questions,please contact me.
+e-mail:shell.albert@gmail.com
+mobile:13522296239
+google+:shell.albert
+
+Good Luck!

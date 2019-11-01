@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DCinemaSecurityMessage xmlns="http://www.smpte-ra.org/schemas/430-3/2006/ETM" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:enc="http://www.w3.org/2001/04/xmlenc#">
+  <AuthenticatedPublic Id="ID_AuthenticatedPublic">
+    <MessageId>urn:uuid:bd57e4f2-90c8-4492-913a-020532768b93</MessageId>
+    <MessageType>http://www.smpte-ra.org/430-1/2006/KDM#kdm-key-type</MessageType>
+    <AnnotationText>kdm for gansidui0320_e_cpl</AnnotationText>
+    <IssueDate>2014-07-01T15:03:07+08:00</IssueDate>
+    <Signer>
+      <ds:X509IssuerName>dnQualifier=X8GB05coaZTKKlthpp2gegaZyS0=,CN=.CA.DC.Oristartech.com,OU=Oristartech.com,O=Oristartech.com</ds:X509IssuerName>
+      <ds:X509SerialNumber>7</ds:X509SerialNumber>
+    </Signer>
+    <RequiredExtensions>
+      <KDMRequiredExtensions xmlns="http://www.smpte-ra.org/schemas/430-1/2006/KDM">
+        <Recipient>
+          <X509IssuerSerial>
+            <ds:X509IssuerName>O=DC.DADI.CN,OU=SM-CA.DC.DADI.CN,CN=.Dadi.CA.SM-CA,dnQualifier=04MPNvGGFaM40Ycdj1WOol9sPxk=</ds:X509IssuerName>
+            <ds:X509SerialNumber>3</ds:X509SerialNumber>
+          </X509IssuerSerial>
+          <X509SubjectName>O=DC.DADI.CN,OU=DadiShowPlayer,CN=SM MDI FMI LE.DadiCinema.MD-100.123456789.v1_0,dnQualifier=sVNjjQJ/3/uJHGOT55Pr8KQDyfQ=</X509SubjectName>
+        </Recipient>
+        <CompositionPlaylistId>urn:uuid:bd2a8c72-8efb-47e7-8d02-0c38b0e68f7c</CompositionPlaylistId>
+        <ContentTitleText>gansidui0320_e_cpl</ContentTitleText>
+        <ContentKeysNotValidBefore>2014-07-01T15:03:07+08:00</ContentKeysNotValidBefore>
+        <ContentKeysNotValidAfter>2014-07-31T15:03:07+08:00</ContentKeysNotValidAfter>
+        <AuthorizedDeviceInfo>
+          <DeviceListIdentifier>urn:uuid:e8b23716-c235-4059-ac90-6666ecc9678e</DeviceListIdentifier>
+          <DeviceListDescription>DadiCinema.MD-100.123456789.v1_0</DeviceListDescription>
+          <DeviceList>
+            <CertificateThumbprint>kqsiq5MUolod6utt39bNO85ZHBA=</CertificateThumbprint>
+          </DeviceList>
+        </AuthorizedDeviceInfo>
+        <KeyIdList>
+          <TypedKeyId>
+            <KeyType>MDIK</KeyType>
+            <KeyId>urn:uuid:98efbeab-2aca-45c6-9b55-72b5119be9f8</KeyId>
+          </TypedKeyId>
+        </KeyIdList>
+        <ForensicMarkFlagList>
+          <ForensicMarkFlag>http://www.smpte-ra.org/430-1/2006/KDM#mrkflg-audio-disable</ForensicMarkFlag>
+        </ForensicMarkFlagList>
+      </KDMRequiredExtensions>
+    </RequiredExtensions>
+    <NonCriticalExtensions/>
+  </AuthenticatedPublic>
+  <AuthenticatedPrivate Id="ID_AuthenticatedPrivate">
+    <enc:EncryptedKey>
+      <enc:EncryptionMethod Algorithm="http://www.w3.org/2001/04/xmlenc#rsa-oaep-mgf1p">
+        <ds:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+      </enc:EncryptionMethod>
+      <enc:CipherData>
+        <enc:CipherValue>OIEiTmnCtpXA3br0VpzxuTJYKQWHCW+C28NT8YRew9Pt+XucQPGDBBgtcMjDe/jf
+JTjBI/N8JVzuEpi8s4O8rN7LrlxMc8bYzNFj1xKbHpysBh6T3zAhM4lnHTWnEOFP
+K/B1G+INgSTyeWcdjAhnvWAoMB2yC8RDK1P2XJ/JnbXwX938LBqxDv8w7aL25t3U
+2xXqOcr8CR3CpWUHlQV/BU+8L2A/D/4uJqtOFeYDPNzTDB8TFQUEmzMeQcmpkXzs
++chQs/4nsnK/u/8XVrbd+bOFpTcPDNNRMXSI1SL7+SX/Npo9P6rPoVVm7HZEYq1J
+CCP04iWltG64gneVTZqM/w==</enc:CipherValue>
+      </enc:CipherData>
+    </enc:EncryptedKey>
+  </AuthenticatedPrivate>
+  <ds:Signature>
+    <ds:SignedInfo>
+      <ds:CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315#WithComments"/>
+      <ds:SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256"/>
+      <ds:Reference URI="#ID_AuthenticatedPublic">
+        <ds:DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/>
+        <ds:DigestValue>AjIV1cD3ifHdFOqYmT18IJYVb0NbhvrWMcQUfxe++EA=</ds:DigestValue>
+      </ds:Reference>
+      <ds:Reference URI="#ID_AuthenticatedPrivate">
+        <ds:DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/>
+        <ds:DigestValue>Woq5dmhkPWyC5dUo0QV8VQ7M4sjmOaC4o5NeKLMTOfQ=</ds:DigestValue>
+      </ds:Reference>
+    </ds:SignedInfo>
+    <ds:SignatureValue>UwIkaPuQ7eI9sPgEwMK7sSPSV5MotNgyplq3QdHRx73LRz8N2ycbS0YtN4vv+uOz
+aDDBzvfKwf85R88XcCusfRicS8mOiWm/WKTL75gF6iLc9U4xAHk7BUOfd7STkB9X
+Zl7ZSTAb1yBSorkcJlDMXuA8rvqMj0OoVOHY7mXPgDT8aqEqkVl/EJg7YQQHPLfm
+p8L631q4vyffknyDGA66+WWc6M1x3yq7DLC2D7VgR/9EqrNOcknIbR12S9zgLPKI
+5HRkLdcvS9hgOkaVWu38Eo2TEsV+Ssr/6BRCkN3VRODmcQfjnoTqm0d9t7Z/5hDR
+89Pyb7/BaMtDBQAdiveb1Q==</ds:SignatureValue>
+    <ds:KeyInfo>
+      <ds:X509Data>
+        <ds:X509IssuerSerial>
+          <ds:X509IssuerName>dnQualifier=X8GB05coaZTKKlthpp2gegaZyS0=,CN=.CA.DC.Oristartech.com,OU=Oristartech.com,O=Oristartech.com</ds:X509IssuerName>
+          <ds:X509SerialNumber>7</ds:X509SerialNumber>
+        </ds:X509IssuerSerial>
+        <ds:X509Certificate>MIIEXTCCA0WgAwIBAgIBBzANBgkqhkiG9w0BAQsFADB8MRgwFgYDVQQKEw9Pcmlz
+dGFydGVjaC5jb20xGDAWBgNVBAsTD09yaXN0YXJ0ZWNoLmNvbTEfMB0GA1UEAxMW
+LkNBLkRDLk9yaXN0YXJ0ZWNoLmNvbTElMCMGA1UELhMcWDhHQjA1Y29hWlRLS2x0
+aHBwMmdlZ2FaeVMwPTAeFw0xMzA3MjgwODQ5MjJaFw0zODA3MTcwODQ5MjJaMHsx
+GDAWBgNVBAoTD09yaXN0YXJ0ZWNoLmNvbTEYMBYGA1UECxMPT3Jpc3RhcnRlY2gu
+Y29tMR4wHAYDVQQDExVDUy5EQy5PcmlzdGFydGVjaC5jb20xJTAjBgNVBC4THGZo
+M2kwMFFJRGN3SGF1WmE2WENGS1dra0lwQT0wggEiMA0GCSqGSIb3DQEBAQUAA4IB
+DwAwggEKAoIBAQCva9SLl4bZNdFd4YQSS2/QtGamoVpzC+KbaXiidcXPt/Ij3ScY
+9vZOXgWbG/nFDI8ZaK3swJbAVz8JKXSS8mgkcCSkey+lzGhfmMWClzdpZpk1TPJ3
+UTZ9ZRhm4vBHLPerzPhBfCgTcI4rwqnqw0K+gUq+VAopNHMFlPT6Cv/J13aLZQa9
+qeAfvsjAtVsf7LoiGhteaXcnuVxwUOEioZ+WIWCTBRWgEpHx+muPzrU7LjVgAyT+
+P3KPYdzI+SWu3uw0QkKKnjMX4dlNbuMd+Qua/0ZPD33JEAEwZouFi9IFwYfzUnU+
+Js+7S529+0vujdnXKqESqUAzOfmnmn6BiaN/AgMBAAGjgeowgecwDAYDVR0TAQH/
+BAIwADALBgNVHQ8EBAMCBaAwHQYDVR0OBBYEFH4d4tNECA3MB2rmWulwhSlpJCKQ
+MIGqBgNVHSMEgaIwgZ+AFF/BgdOXKGmUyipbYaadoHoGmcktoYGDpIGAMH4xGDAW
+BgNVBAoTD09yaXN0YXJ0ZWNoLmNvbTEYMBYGA1UECxMPT3Jpc3RhcnRlY2guY29t
+MSEwHwYDVQQDExguUk9PVC5EQy5PcmlzdGFydGVjaC5jb20xJTAjBgNVBC4THGlE
+c0NhaUhndXBHTnpPSXIyYTNGM3ZIVWwwTT2CAQYwDQYJKoZIhvcNAQELBQADggEB
+ABk6tkcSN98IOYyvVQsp5V0cDmwL6znAifZd5/7OkB9q3tSZr1+IixTIZ3s1U1Jm
+42xfJRGag2AYarSC7J2IapKN8DCW3KBwhQiz11dorjOZpqZcXmzPICiIeZPHbGok
+4JuKtKpyWlDhF+BptYAwWGc5MZtx83y8QO6ObtlAQnZEwnJtPy81iezwlB8a6Qc6
+0mWyZ54TYqRgmwa29c+9xVzKsmLMWxHOSgBUKdd9huCEzE+AFtFzfWq8roA9P2FS
+VHrUB3gK2WnxRsCzGXmF3kVzwSGrZqiSAo+lMB7ZnUoFyGR5hs2bFcIya2xD/YTl
+0SvhGHBxDntCkrMXlwzB03c=</ds:X509Certificate>
+      </ds:X509Data>
+      <ds:X509Data>
+        <ds:X509IssuerSerial>
+          <ds:X509IssuerName>dnQualifier=iDsCaiHgupGNzOIr2a3F3vHUl0M=,CN=.ROOT.DC.Oristartech.com,OU=Oristartech.com,O=Oristartech.com</ds:X509IssuerName>
+          <ds:X509SerialNumber>6</ds:X509SerialNumber>
+        </ds:X509IssuerSerial>
+        <ds:X509Certificate>MIIEZjCCA06gAwIBAgIBBjANBgkqhkiG9w0BAQsFADB+MRgwFgYDVQQKEw9Pcmlz
+dGFydGVjaC5jb20xGDAWBgNVBAsTD09yaXN0YXJ0ZWNoLmNvbTEhMB8GA1UEAxMY
+LlJPT1QuREMuT3Jpc3RhcnRlY2guY29tMSUwIwYDVQQuExxpRHNDYWlIZ3VwR056
+T0lyMmEzRjN2SFVsME09MB4XDTEzMDcyODA4NDkyMloXDTM4MDcxOTA4NDkyMlow
+fDEYMBYGA1UEChMPT3Jpc3RhcnRlY2guY29tMRgwFgYDVQQLEw9PcmlzdGFydGVj
+aC5jb20xHzAdBgNVBAMTFi5DQS5EQy5PcmlzdGFydGVjaC5jb20xJTAjBgNVBC4T
+HFg4R0IwNWNvYVpUS0tsdGhwcDJnZWdhWnlTMD0wggEiMA0GCSqGSIb3DQEBAQUA
+A4IBDwAwggEKAoIBAQCxg5HzPBh1d+CmTSKfcuqoUdgrWWYUo/WM6A+j7E5KxQkM
+tO8Uf0/qlfW6SoDHoozH4Fu85xu8gY+NO2C+WqFnqF5o/lerggg98VAbhEAeYI/c
+0R7lnTSaVrYIXlGXx1PEM0Dc6NrljrS8eQLV5U7J6p/MldEYIMXICYqEA+2JblSM
+kAphg3beNmIP3yo1j7BdGbzn/V+Yj6FbhQVvKmPe+f6Lg2EmqbCc+0ouUjpcCMcs
+QRtQRezIKXiDjJmaso+RT4k96Fa4jgi/okdD1ql9JNXXlh+DrHd/mtC9qLTjghR1
+TV0zgaPM4QorjU7hilfwTQhg9x73xU5QYzPBTdPFAgMBAAGjgfAwge0wEgYDVR0T
+AQH/BAgwBgEB/wIBAjALBgNVHQ8EBAMCAQYwHQYDVR0OBBYEFF/BgdOXKGmUyipb
+YaadoHoGmcktMIGqBgNVHSMEgaIwgZ+AFIg7Amoh4LqRjcziK9mtxd7x1JdDoYGD
+pIGAMH4xGDAWBgNVBAoTD09yaXN0YXJ0ZWNoLmNvbTEYMBYGA1UECxMPT3Jpc3Rh
+cnRlY2guY29tMSEwHwYDVQQDExguUk9PVC5EQy5PcmlzdGFydGVjaC5jb20xJTAj
+BgNVBC4THGlEc0NhaUhndXBHTnpPSXIyYTNGM3ZIVWwwTT2CAQUwDQYJKoZIhvcN
+AQELBQADggEBAC6Z+7uK2Ip945Rq6IB41bL68moPngtOeO/OG2/OW0fmgau4PhTs
++pvG2t5ZMMV8aqyS44bOPLH6+jASnrapKPTtSE/3DgScXx2xDqj5p0PDRFMh9Rq7
+6UE7yKzB2lKg4BDqZj77r9VETmvQflkvMyNpSWrWprJ3yq6lJYYMvXzIGOEaTdeH
+2T4iq1uNAqSIkD6Dq6azQLt+6569+2KsEU85De0hebpLNWPlAMlfy9oTME9wehJ2
+JMDp1X6PYx2ds54XYilF+XKeNGzGyEli6zNqNBXHjdu1G8yPpabAEkiad8s/7MHG
+ZSSZFUYBFRwHIB+V1Om4OwueYFBSW+Wy8/U=</ds:X509Certificate>
+      </ds:X509Data>
+      <ds:X509Data>
+        <ds:X509IssuerSerial>
+          <ds:X509IssuerName>dnQualifier=iDsCaiHgupGNzOIr2a3F3vHUl0M=,CN=.ROOT.DC.Oristartech.com,OU=Oristartech.com,O=Oristartech.com</ds:X509IssuerName>
+          <ds:X509SerialNumber>5</ds:X509SerialNumber>
+        </ds:X509IssuerSerial>
+        <ds:X509Certificate>MIIEaDCCA1CgAwIBAgIBBTANBgkqhkiG9w0BAQsFADB+MRgwFgYDVQQKEw9Pcmlz
+dGFydGVjaC5jb20xGDAWBgNVBAsTD09yaXN0YXJ0ZWNoLmNvbTEhMB8GA1UEAxMY
+LlJPT1QuREMuT3Jpc3RhcnRlY2guY29tMSUwIwYDVQQuExxpRHNDYWlIZ3VwR056
+T0lyMmEzRjN2SFVsME09MB4XDTEzMDcyODA4NDkyMVoXDTM4MDcyMjA4NDkyMVow
+fjEYMBYGA1UEChMPT3Jpc3RhcnRlY2guY29tMRgwFgYDVQQLEw9PcmlzdGFydGVj
+aC5jb20xITAfBgNVBAMTGC5ST09ULkRDLk9yaXN0YXJ0ZWNoLmNvbTElMCMGA1UE
+LhMcaURzQ2FpSGd1cEdOek9JcjJhM0YzdkhVbDBNPTCCASIwDQYJKoZIhvcNAQEB
+BQADggEPADCCAQoCggEBAKMpDu40jtAi3tpL7wBPxghejTf6OTqzVDajxjxS9SHD
+//aNzksjhCYPcxcaUS8XX24vZajbgRwiWOLfqajiH3EIdmHJ+oefsgW6tCtBYQOY
+3wb+niwHNQLhnw1pfdosNOyDPpHq2l08su3O8knARI7CDQV5hcG408jmJtcddu3M
+zC8Vc7HycyeQ3DUZLxSCRENS6+zXGCasoeJoHKD69LJ47P+jXMa5WUYdYtpEuu8i
+Wr99PgkkfXKB7sjouqiZzuMglJJWOylLcMrl7X5Pa6645FMn9F7cBsjD6WwaEY1y
+H0fPpTRsjd2dyRmGTJCJz42Bl+pX01xHRzb4Oq1ALi8CAwEAAaOB8DCB7TASBgNV
+HRMBAf8ECDAGAQH/AgEDMAsGA1UdDwQEAwIBBjAdBgNVHQ4EFgQUiDsCaiHgupGN
+zOIr2a3F3vHUl0MwgaoGA1UdIwSBojCBn4AUiDsCaiHgupGNzOIr2a3F3vHUl0Oh
+gYOkgYAwfjEYMBYGA1UEChMPT3Jpc3RhcnRlY2guY29tMRgwFgYDVQQLEw9Pcmlz
+dGFydGVjaC5jb20xITAfBgNVBAMTGC5ST09ULkRDLk9yaXN0YXJ0ZWNoLmNvbTEl
+MCMGA1UELhMcaURzQ2FpSGd1cEdOek9JcjJhM0YzdkhVbDBNPYIBBTANBgkqhkiG
+9w0BAQsFAAOCAQEARihZvLTcpgx2ykF9FAPNMLIHLaZjcRE9WViXK5xXLQcDPeKf
+z61OpJeVMGV2Ch30pNBCTBNrQExg4s3/hdudg0IQ0Q1qMXQ1jLrEhXC4irQ6roEC
+ZcG0R8zU4H6sZPBFBx7qhA+6dHkTD+6ALMD/QA3Dfao+M3rlIcGD/blhAopEFhXQ
+oc108v7/QiK70DL6ps5YUMZZphE9BUAohvxdvGlfmKVBixht2BvG8QsZyJt08+1c
+tfnqw9Z3p5Tnj8tk9A4rmdRaQzqOmTXYZ11D1zSBHf6hoL3YQUHzRFrVhotLhN8X
+QBWMZF/0oTEVNmT18fA7bHd0PAjDjZmf3wwJWA==</ds:X509Certificate>
+      </ds:X509Data>
+    </ds:KeyInfo>
+  </ds:Signature>
+</DCinemaSecurityMessage>

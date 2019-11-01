@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<CompositionPlaylist xmlns="http://www.digicine.com/PROTO-ASDCP-CPL-20040511#">
+
+  <Id>urn:uuid:50c19487-c434-41d8-bd36-8e77d1302b37</Id>
+
+  <IssueDate>2011-09-27T11:27:12-00:00</IssueDate>
+
+  <Issuer>dadi-issuer</Issuer>
+
+  <Creator>dadi-createor</Creator>
+
+  <ContentTitleText>Comprehensive Test Reel, Subtitled v0.8 encrypted</ContentTitleText>
+
+  <ContentKind>feature</ContentKind>
+
+  <RatingList></RatingList>
+
+  <ReelList>
+    <Reel>
+      <Id>urn:uuid:41fc4238-5dfb-4906-b52b-d0a670ab4372</Id>
+      <AssetList>
+        <MainPicture>
+          <Id>urn:uuid:cd3022e0-0bc9-451b-a98a-b73d15a06f65</Id>
+          <EditRate>24 1</EditRate>
+          <IntrinsicDuration>3437</IntrinsicDuration>
+          <EntryPoint>0</EntryPoint>
+          <Duration>3437</Duration>
+          <KeyId>urn:uuid:038e35ea-6b62-4582-9553-eebfbf657a34</KeyId>
+          <Hash>b+NDKr2Zx70GKgdGgORBFe+Jkc0=</Hash>
+          <FrameRate>24 1</FrameRate>
+          <ScreenAspectRatio>1.77</ScreenAspectRatio>
+        </MainPicture>
+        <MainSound>
+          <Id>urn:uuid:7acc078e-66f1-4677-8764-d139acca7274</Id>
+          <EditRate>24 1</EditRate>
+          <IntrinsicDuration>3437</IntrinsicDuration>
+          <EntryPoint>0</EntryPoint>
+          <Duration>3437</Duration>
+        </MainSound>
+      </AssetList>
+    </Reel>
+  </ReelList>
+
+</CompositionPlaylist>

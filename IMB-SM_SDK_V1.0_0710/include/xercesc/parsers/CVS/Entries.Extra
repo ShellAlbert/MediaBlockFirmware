@@ -1,0 +1,6 @@
+/AbstractDOMParser.hpp////
+/DOMLSParserImpl.hpp////
+/SAX2XMLFilterImpl.hpp////
+/SAX2XMLReaderImpl.hpp////
+/SAXParser.hpp////
+/XercesDOMParser.hpp////

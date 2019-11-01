@@ -1,0 +1,13 @@
+/DciDeviceDescription.h////
+/DciLogRecord.h////
+/DciLogRecordBody.h////
+/DciLogRecordElement.h////
+/DciLogRecordHeader.h////
+/DciLogRecordSequence.h////
+/DciLogRecordSignature.h////
+/DciLogReport.h////
+/DciLogReportValidator.h////
+/DciLogSignatureCheck.h////
+/DciLogValidationFilter.h////
+/DciLogValidatorCommon.h////
+/DsigSignature.h////

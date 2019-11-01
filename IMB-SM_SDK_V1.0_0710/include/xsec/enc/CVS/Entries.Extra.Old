@@ -1,0 +1,13 @@
+/XSECCryptoBase64.hpp////
+/XSECCryptoException.hpp////
+/XSECCryptoHash.hpp////
+/XSECCryptoKey.hpp////
+/XSECCryptoKeyDSA.hpp////
+/XSECCryptoKeyHMAC.hpp////
+/XSECCryptoKeyRSA.hpp////
+/XSECCryptoProvider.hpp////
+/XSECCryptoSymmetricKey.hpp////
+/XSECCryptoUtils.hpp////
+/XSECCryptoX509.hpp////
+/XSECKeyInfoResolver.hpp////
+/XSECKeyInfoResolverDefault.hpp////

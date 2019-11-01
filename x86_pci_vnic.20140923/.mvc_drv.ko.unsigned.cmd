@@ -1,0 +1,1 @@
+cmd_/home/shell.albert/oristartech/x86/x86_pci_vnic/mvc_drv.ko.unsigned := ld -r -m elf_i386 -T /usr/src/kernels/2.6.32-431.20.3.el6.i686/scripts/module-common.lds --build-id -o /home/shell.albert/oristartech/x86/x86_pci_vnic/mvc_drv.ko.unsigned /home/shell.albert/oristartech/x86/x86_pci_vnic/mvc_drv.o /home/shell.albert/oristartech/x86/x86_pci_vnic/mvc_drv.mod.o 

@@ -1,0 +1,25 @@
+/** mvc2api
+  * * ----------------------------------------------------------- *
+  * 
+  * * ----------------------------------------------------------- *
+  * Copyright (C) 2006-2012 MikroM GmbH - All Rights Reserved      
+*/
+#ifndef _MVC2API_H_
+#define _MVC2API_H_
+
+#include "mvc2api_types.h"
+#include "mvc2api_device.h"
+#include "mvc2api_securitymanager.h"
+
+#include <new>
+#include <ctime>
+
+/** Namespace of all MVC20x API classes.
+*/
+namespace mvc2
+{
+
+
+}
+
+#endif /* _MVC2API_H_ */
